@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 33f7684c1067a454bb3ab847a66527fd
+timeCreated: 1498355196
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Typewriter Press
+  fontNames:
+  - Typewriter Press
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
