@@ -6,6 +6,7 @@ public class IAController: MonoBehaviour {
     public float speed = 1.4f;
     public float directionChangeInterval = 1;
     public float maxHeadingChange = 30;
+    public float JumpStrgh = 3;
 
     CharacterController controller;
     float heading;
@@ -33,8 +34,34 @@ public class IAController: MonoBehaviour {
         if (!ContactWithPlayer) {
             controller.SimpleMove(forward * speed);
         }
+
+        //IMPLEMENTAR TESTE DE PULO DE IA
+
+        //if (Controlador.isGrounded) {
+        //    _direcaoDeMovimento = new Vector3(0, Input.GetAxis("Vertical"), Input.GetAxis("Horizontal"));
+        //    _direcaoDeMovimento = transform.TransformDirection(_direcaoDeMovimento);
+        //    _direcaoDeMovimento *= Velocidade;
+        //    if (Input.GetButton("Jump")/* && _animacao.GetBool ("Andando")*/) {
+        //        _direcaoDeMovimento.y = Velocidade_Pulo;
+        //        _animacao.SetTrigger("Pulando_Andando");
+
+        //    }
+        //}
+        //_direcaoDeMovimento.y -= Gravidade * Time.deltaTime;
+        //Controlador.Move(_direcaoDeMovimento * Time.deltaTime);
+        //ExecutaAnimacaoDeAndar(_direcaoDeMovimento.x);
+
+        //FIM DE CÓDIGO DE PULO
+
+        //deu errado
+
+        //if (Input.GetButton("Jump")) {
+        //    Debug.Log("Pulou");
+        //    var up = transform.TransformDirection(Vector3.up);
+        //    controller.SimpleMove(up * JumpStrgh);
+        //}
     }
-    
+
     void OnControllerColliderHit(ControllerColliderHit hit) {
         if (hit.gameObject.tag == "LimiteAcampamento" || hit.gameObject.tag == "PropsAcampamento" || hit.gameObject.tag == "CubeIA") { 
             ApplyNewHeading();
@@ -44,7 +71,9 @@ public class IAController: MonoBehaviour {
     IEnumerator NewHeading() {
         while (true) {
             NewHeadingRoutine();
-            yield return new WaitForSeconds(directionChangeInterval);
+            //yield return new WaitForSeconds(directionChangeInterval);
+            yield return new WaitForSeconds(Random.Range(1, 3));
+
         }
     }
     
